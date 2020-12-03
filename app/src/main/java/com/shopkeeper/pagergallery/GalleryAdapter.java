@@ -1,7 +1,8 @@
-package com.shopkeeper.gallery;
+package com.shopkeeper.pagergallery;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,9 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import io.supercharge.shimmerlayout.ShimmerLayout;
 
@@ -47,10 +51,10 @@ public class GalleryAdapter extends ListAdapter<PhotoItem, MyViewHolder> {
             @Override
             public void onClick(View view) {
                 Bundle bundle=new Bundle();
-                bundle.putParcelable("PHOTO", getItem(holder.getAdapterPosition()));
+                bundle.putParcelableArrayList("PHOTO_LIST", new ArrayList<Parcelable>(getCurrentList()));//...
+                bundle.putInt("PHOTO_POSITION",holder.getAdapterPosition());
                 NavController navController = Navigation.findNavController(holder.itemView);
-                navController.navigate(R.id.action_galleryFragment_to_photoFragment, bundle);
-
+                navController.navigate(R.id.action_galleryFragment_to_pagerPhotoFragment, bundle);
             }
         });
         return holder;

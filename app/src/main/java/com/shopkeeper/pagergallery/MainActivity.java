@@ -1,4 +1,4 @@
-package com.shopkeeper.gallery;
+package com.shopkeeper.pagergallery;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;

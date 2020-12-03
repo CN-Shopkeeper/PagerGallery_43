@@ -1,4 +1,4 @@
-package com.shopkeeper.gallery;
+package com.shopkeeper.pagergallery;
 
 import android.os.Bundle;
 
@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Handler;
@@ -48,7 +49,7 @@ public class GalleryFragment extends Fragment {
         recyclerView=view.findViewById(R.id.recyclerView);
         galleryAdapter=new GalleryAdapter();
         recyclerView.setAdapter(galleryAdapter);
-        recyclerView.setLayoutManager(new GridLayoutManager(requireContext(),2));
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
 
         swipeRefreshLayout=view.findViewById(R.id.swipeRefreshLayout);
         return view;

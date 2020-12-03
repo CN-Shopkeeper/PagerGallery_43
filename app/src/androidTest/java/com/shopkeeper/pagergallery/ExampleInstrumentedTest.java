@@ -1,4 +1,4 @@
-package com.shopkeeper.gallery;
+package com.shopkeeper.pagergallery;
 
 import android.content.Context;
 

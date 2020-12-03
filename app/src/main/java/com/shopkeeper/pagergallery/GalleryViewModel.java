@@ -1,4 +1,4 @@
-package com.shopkeeper.gallery;
+package com.shopkeeper.pagergallery;
 
 import android.app.Application;
 import android.util.Log;
@@ -12,9 +12,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
